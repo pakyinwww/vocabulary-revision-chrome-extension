@@ -1,4 +1,31 @@
 {
     "from": "from",
-    "to": "to"
+    "to": "to",
+    "app": {
+        "title": "Vocabulary Revision",
+        "nav": {
+            "vocabulary": "Vocabulary List",
+            "settings": "Settings"
+        },
+        "settings": {
+            "title": "Settings",
+            "language": {
+                "label": "Language",
+                "placeholder": "Pick one",
+                "current": "Current Language: {{lng}}"
+            }
+        },
+        "vocabulary": {
+            "title": "Vocabulary List",
+            "table": {
+                "position": "Element position",
+                "name": "Element name",
+                "symbol": "Symbol",
+                "mass": "Atomic mass"
+            }
+        },
+        "common": {
+            "menu": "Menu"
+        }
+    }
 }

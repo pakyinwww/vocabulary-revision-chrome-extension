@@ -2,20 +2,20 @@ import { Container, Title, Select, Text } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 
 export function Settings() {
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     return (
         <Container>
-            <Title order={2} mb="md">Settings</Title>
+            <Title order={2} mb="md">{t('app.settings.title')}</Title>
             <Select
-                label="Language"
-                placeholder="Pick one"
+                label={t('app.settings.language.label')}
+                placeholder={t('app.settings.language.placeholder')}
                 data={['en', 'zh-TW']}
                 value={i18n.language}
                 onChange={(value) => i18n.changeLanguage(value || 'en')}
             />
             <Text mt="md" size="sm" c="dimmed">
-                Current Language: {i18n.language}
+                {t('app.settings.language.current', { lng: i18n.language })}
             </Text>
         </Container>
     );

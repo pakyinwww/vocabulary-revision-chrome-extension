@@ -11,8 +11,8 @@ export function ApplicationShell({ children }: { children: React.ReactNode }) {
     const { t } = useTranslation();
 
     const links = [
-        { icon: IconBook, label: 'Vocabulary List', to: '/vocabulary' },
-        { icon: IconSettings, label: 'Settings', to: '/settings' },
+        { icon: IconBook, label: t('app.nav.vocabulary'), to: '/vocabulary' },
+        { icon: IconSettings, label: t('app.nav.settings'), to: '/settings' },
     ];
 
     const mainLinks = links.map((link) => (
@@ -38,7 +38,7 @@ export function ApplicationShell({ children }: { children: React.ReactNode }) {
                 <Group h="100%" px="md" justify="space-between">
                     <Group>
                         <Burger opened={opened} onClick={toggle} />
-                        <Title order={3}>Vocabulary Revision</Title>
+                        <Title order={3}>{t('app.title')}</Title>
                     </Group>
                     <ActionIcon variant="subtle" color="gray" onClick={() => window.close()}>
                         {/* @ts-ignore */}
@@ -49,7 +49,7 @@ export function ApplicationShell({ children }: { children: React.ReactNode }) {
             <AppShell.Main>
                 {children}
             </AppShell.Main>
-            <Drawer opened={opened} onClose={close} title="Menu">
+            <Drawer opened={opened} onClose={close} title={t('app.common.menu')}>
                 {mainLinks}
             </Drawer>
         </AppShell>
