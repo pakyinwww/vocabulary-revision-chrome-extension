@@ -26,6 +26,7 @@
         "common": {
             "menu": "Menu",
             "context_menu": "Check \"%s\""
-        }
+        },
+        "to": "url"
     }
 }
