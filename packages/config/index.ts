@@ -3,12 +3,14 @@ export interface Config {
     llm: string;
     language: string;
     newTab: boolean;
+    firstTime: boolean;
 }
 
 const defaultConfig: Config = {
     llm: 'perplexity',
     language: 'en',
-    newTab: true
+    newTab: true,
+    firstTime: true
 };
 
 export const getConfig = (): Promise<Config> => {

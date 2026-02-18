@@ -21,6 +21,10 @@
                 "no": "No"
             }
         },
+        "welcome": {
+            "title": "Welcome",
+            "confirm": "Start"
+        },
         "vocabulary": {
             "title": "Vocabulary List",
             "table": {

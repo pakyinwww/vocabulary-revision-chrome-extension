@@ -21,6 +21,10 @@
                 "no": "否"
             }
         },
+        "welcome": {
+            "title": "歡迎",
+            "confirm": "開始"
+        },
         "vocabulary": {
             "title": "單字列表",
             "table": {
