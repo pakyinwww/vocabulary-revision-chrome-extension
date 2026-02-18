@@ -4,7 +4,7 @@
   "description": "This is the background app for the chrome extension.",
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
+  "type": "module",
   "main": "dist/background.js",
   "scripts": {
     "start": "vite build --watch",

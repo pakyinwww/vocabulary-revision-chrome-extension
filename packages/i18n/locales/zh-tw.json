@@ -18,10 +18,9 @@
         "vocabulary": {
             "title": "單字列表",
             "table": {
-                "position": "元素位置",
-                "name": "元素名稱",
-                "symbol": "符號",
-                "mass": "原子量"
+                "word": "單字",
+                "url": "連結",
+                "created_at": "建立時間"
             }
         },
         "common": {

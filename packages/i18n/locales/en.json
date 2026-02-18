@@ -18,10 +18,9 @@
         "vocabulary": {
             "title": "Vocabulary List",
             "table": {
-                "position": "Element position",
-                "name": "Element name",
-                "symbol": "Symbol",
-                "mass": "Atomic mass"
+                "word": "Word",
+                "url": "Link",
+                "created_at": "Created At"
             }
         },
         "common": {

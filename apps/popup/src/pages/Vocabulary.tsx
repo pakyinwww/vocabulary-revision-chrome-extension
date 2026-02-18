@@ -1,23 +1,26 @@
 import { Table, Title, Container } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 
-const elements = [
-    { position: 6, mass: 12.011, symbol: 'C', name: 'Carbon' },
-    { position: 7, mass: 14.007, symbol: 'N', name: 'Nitrogen' },
-    { position: 39, mass: 88.906, symbol: 'Y', name: 'Yttrium' },
-    { position: 56, mass: 137.33, symbol: 'Ba', name: 'Barium' },
-    { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },
-];
+import { getAllVocabularies, Vocabulary as VocabularyType } from '@repo/database';
+import { useEffect, useState } from 'react';
 
 export function Vocabulary() {
     const { t } = useTranslation();
+    const [vocabularies, setVocabularies] = useState<VocabularyType[]>([]);
 
-    const rows = elements.map((element) => (
-        <Table.Tr key={element.name}>
-            <Table.Td>{element.position}</Table.Td>
-            <Table.Td>{element.name}</Table.Td>
-            <Table.Td>{element.symbol}</Table.Td>
-            <Table.Td>{element.mass}</Table.Td>
+    useEffect(() => {
+        getAllVocabularies().then(setVocabularies);
+    }, []);
+
+    const rows = vocabularies.map((vocab) => (
+        <Table.Tr key={vocab.id}>
+            <Table.Td>{vocab.word}</Table.Td>
+            <Table.Td>
+                <a href={vocab.url} target="_blank" rel="noreferrer">
+                    {t('app.to')}
+                </a>
+            </Table.Td>
+            <Table.Td>{new Date(vocab.createdAt).toLocaleDateString()}</Table.Td>
         </Table.Tr>
     ));
 
@@ -27,10 +30,9 @@ export function Vocabulary() {
             <Table>
                 <Table.Thead>
                     <Table.Tr>
-                        <Table.Th>{t('app.vocabulary.table.position')}</Table.Th>
-                        <Table.Th>{t('app.vocabulary.table.name')}</Table.Th>
-                        <Table.Th>{t('app.vocabulary.table.symbol')}</Table.Th>
-                        <Table.Th>{t('app.vocabulary.table.mass')}</Table.Th>
+                        <Table.Th>{t('app.vocabulary.table.word')}</Table.Th>
+                        <Table.Th>{t('app.vocabulary.table.url')}</Table.Th>
+                        <Table.Th>{t('app.vocabulary.table.created_at')}</Table.Th>
                     </Table.Tr>
                 </Table.Thead>
                 <Table.Tbody>{rows}</Table.Tbody>
