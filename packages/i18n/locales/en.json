@@ -10,9 +10,13 @@
         "settings": {
             "title": "Settings",
             "language": {
-                "label": "Language",
-                "placeholder": "Pick one",
-                "current": "Current Language: {{lng}}"
+                "label": "Language/語言",
+                "placeholder": "Pick one/選擇語言",
+                "current": "Current Language/當前語言: {{lng}}",
+                "name": {
+                    "en": "English",
+                    "zh-TW": "Chinese (Traditional)"
+                }
             },
             "new_tab": {
                 "label": "Open in New Tab after right click the highlighted text",

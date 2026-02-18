@@ -35,7 +35,7 @@ export function Settings() {
             <Select
                 label={t('app.settings.language.label')}
                 placeholder={t('app.settings.language.placeholder')}
-                data={['en', 'zh-TW']}
+                data={[{ value: 'en', label: t('app.settings.language.name.en') }, { value: 'zh-TW', label: t('app.settings.language.name.zh-TW') }]}
                 value={i18n.language}
                 onChange={handleLanguageChange}
             />
