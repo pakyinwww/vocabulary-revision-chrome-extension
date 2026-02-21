@@ -53,7 +53,7 @@
         },
         "vocabulary": {
             "title": "Vocabulary List",
-            "export": "Export to CSV",
+            "export": "Export",
             "table": {
                 "word": "Word",
                 "url": "Link",

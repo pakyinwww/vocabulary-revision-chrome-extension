@@ -53,7 +53,7 @@
         },
         "vocabulary": {
             "title": "單字列表",
-            "export": "匯出為 CSV",
+            "export": "匯出",
             "table": {
                 "word": "單字",
                 "url": "連結",
