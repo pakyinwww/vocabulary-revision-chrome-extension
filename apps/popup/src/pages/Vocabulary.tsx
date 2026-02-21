@@ -62,8 +62,14 @@ export function Vocabulary() {
         refresh();
     }, []);
 
-    const totalPages = Math.ceil(vocabulary.length / itemsPerPage);
-    const paginatedVocabulary = vocabulary.slice(
+    const sortedVocabulary = [...vocabulary].sort((a, b) => {
+        const aTime = new Date(a.createdAt).getTime();
+        const bTime = new Date(b.createdAt).getTime();
+        return bTime - aTime;
+    });
+
+    const totalPages = Math.ceil(sortedVocabulary.length / itemsPerPage);
+    const paginatedVocabulary = sortedVocabulary.slice(
         (activePage - 1) * itemsPerPage,
         activePage * itemsPerPage
     );
