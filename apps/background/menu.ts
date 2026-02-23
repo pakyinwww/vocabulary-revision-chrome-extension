@@ -44,9 +44,10 @@ export const addMenuEventListeners = (i18n: i18nType) => {
             if (!config) return;
 
             if (config.newTab) {
+                const prompt = await getLookupPrompt(i18n, word || '', true, config.treatAs);
                 chrome.tabs.create(
                     {
-                        url: `${llmLink[config.llm]}${encodeURIComponent(getLookupPrompt(i18n, word || '', true, config.treatAs)) || ''} `
+                        url: `${llmLink[config.llm]}${encodeURIComponent(prompt) || ''} `
                     },
                     () => { }
                 );
