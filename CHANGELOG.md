@@ -2,7 +2,7 @@
 
 ## Latest (Not yet packed)
 
-nothing as this moment
+- fix - "search" is not using correct i18n
 
 ## 1.2.3
 

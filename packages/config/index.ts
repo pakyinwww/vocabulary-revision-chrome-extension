@@ -49,7 +49,9 @@ export const setConfig = (config: Config): Promise<void> => {
     });
 };
 
-export const getLookupPrompt = (i18n: i18nType, word: string, detail: boolean, focus: string) => {
+export const getLookupPrompt = async (i18n: i18nType, word: string, detail: boolean, focus: string) => {
+    const config = await getConfig();
+    await i18n.changeLanguage(config.language)
     const normalText = i18n.t('app.common.prompt_lookup', { word })
     const focusText = focus === 'not_specified' ? '' : i18n.t('app.common.prompt_focus', { language: i18n.t(`app.settings.treat_as.${focus}`) })
     const detailText = detail ? i18n.t('app.common.prompt_detail') : ''
