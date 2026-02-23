@@ -76,9 +76,10 @@ export function Vocabulary() {
 
     const handleLookup = async (word: string) => {
         const config = await getConfig();
+        const prompt = await getLookupPrompt(i18n, word || '', true, config.treatAs);
         chrome.tabs.create(
             {
-                url: `${llmLink[config.llm]}${encodeURIComponent(getLookupPrompt(i18n, word || '', true, config.treatAs)) || ''} `
+                url: `${llmLink[config.llm]}${encodeURIComponent(prompt) || ''} `
             },
             () => { }
         );
