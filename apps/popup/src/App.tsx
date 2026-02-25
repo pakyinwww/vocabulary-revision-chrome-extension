@@ -3,6 +3,8 @@ import { ApplicationShell } from './components/AppShell/AppShell';
 import { Vocabulary } from './pages/Vocabulary';
 import { Settings } from './pages/Settings';
 import { Welcome } from './pages/Welcome';
+import { Reset } from './pages/Reset';
+import { About } from './pages/About';
 import { useEffect, useState } from 'react';
 import { Config, getConfig } from '@repo/config';
 import { useTranslation } from 'react-i18next';
@@ -41,6 +43,8 @@ function App() {
                             <Route path="/" element={<Navigate to={config.firstTime ? '/welcome' : '/vocabulary'} replace />} />
                             <Route path="/vocabulary" element={<Vocabulary />} />
                             <Route path="/settings" element={<Settings />} />
+                            <Route path="/reset" element={<Reset />} />
+                            <Route path="/about" element={<About />} />
                             <Route path="/welcome" element={<Welcome />} />
                         </Routes>
                     </ApplicationShell> : <LoadingOverlay visible />
